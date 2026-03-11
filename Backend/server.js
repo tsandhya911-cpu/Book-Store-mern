@@ -38,14 +38,6 @@ app.listen(PORT, () => {
 
 
 
-
-
-
-
-
-
-
-
 //tsandhya911_db_user
 //b2mialaeBOtVAQnN
 //mongodb+srv://tsandhya911_db_user:b2mialaeBOtVAQnN@cluster0.s1crcnx.mongodb.net/?appName=Cluster0
