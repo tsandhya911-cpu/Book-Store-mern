@@ -7,6 +7,8 @@ import Spinner from '../components/Spinner';
 import BookTable from '../components/home/BookTable';
 import BooksCard from '../components/home/BooksCard';
 
+const API_URL = import.meta.env.VITE_API_URL;                        
+
 const Home = () => {
     const [books, setBooks] = useState([]);
     const [loading, setLoading] = useState(false);
