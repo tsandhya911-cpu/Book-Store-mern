@@ -82,22 +82,6 @@ dotenv.config();
 const app = express();
 
 app.use(express.json());
-app.use(cors());
-
-app.get("/", (req, res) => {
-  res.status(200).send("Welcome to MERN Book Store API");
-});
-
-// connect database
-connectDB();
-
-app.use("/books", bookRoutes);
-
-const PORT = process.env.PORT || 5000;
-
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
-});
 
 app.use(
   cors({
@@ -107,3 +91,17 @@ app.use(
     ],
   })
 );
+
+app.get("/", (req, res) => {
+  res.send("Welcome to MERN Book Store API");
+});
+
+connectDB();
+
+app.use("/books", bookRoutes);
+
+const PORT = process.env.PORT || 5000;
+
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});

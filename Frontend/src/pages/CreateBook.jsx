@@ -7,9 +7,9 @@ import BackButton from "../components/BackButton";
 import Spinner from "../components/Spinner";
 import { useSnackbar } from "notistack";
 
-const API_URL = import.meta.env.VITE_API_URL;        
+const API_URL = import.meta.env.VITE_API_URL;
 
-const CreateBook = () => {  
+const CreateBook = () => {
   const [title, setTitle] = useState('');
   const [author, setAuthor] = useState('');
   const [publishYear, setPublishYear] = useState('');
@@ -27,8 +27,8 @@ const CreateBook = () => {
     const data = { title, author, publishYear };
     setLoading(true);
 
-    axios
-      .post('${API_URL}/books, data', data)
+    axios.post(`${API_URL}/books`, data)
+
       .then(() => {
         setLoading(false);
         enqueueSnackbar("Book created successfully", { variant: "success" });
@@ -38,7 +38,7 @@ const CreateBook = () => {
         setLoading(false);
         enqueueSnackbar("Error occurred! Check console", { variant: "error" });
         console.error(error);
-      }); 
+      });
   };
 
   return (
